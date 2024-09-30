@@ -1,5 +1,6 @@
 *.exe
-*.vscode
+.vscode
+!.vscode/launch.json
 *.txt
 *.in
 *.out
