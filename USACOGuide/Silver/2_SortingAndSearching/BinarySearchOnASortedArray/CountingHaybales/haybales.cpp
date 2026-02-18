@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    freopen("haybales.in", "r", stdin);
+    freopen("haybales.out", "w", stdout);
+
+    int n, q;
+    cin >> n >> q;
+    vector<int> haybales(n);
+    for (int i = 0; i < n; i++) {
+        cin >> haybales[i];
+    }
+    sort(haybales.begin(), haybales.end());
+    int a, b;
+    while(q--) {
+        cin >> a >> b;
+        int left = lower_bound(haybales.begin(), haybales.end(), a) - haybales.begin();
+        int right = upper_bound(haybales.begin(), haybales.end(), b) - haybales.begin();
+        cout << right - left << "\n";
+    }
+    return 0;
+}
